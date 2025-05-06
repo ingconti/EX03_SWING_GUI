@@ -11,8 +11,10 @@ import java.io.InputStream;
 
 public class CustomFrame extends JFrame implements PropertyChangeListener {
 
+    String str = "Hello";
+
     public void paint(Graphics g) {
-        g.drawString("Hello", 200, 50);
+        g.drawString(str, 200, 50);
 
         int x = 200;
         int y = 100;
@@ -76,7 +78,10 @@ public class CustomFrame extends JFrame implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        System.out.println("evt  " + evt);
+        //System.out.println("evt  " + evt);
+        String s = (String) evt.getNewValue();
+        str = s;
+        System.out.println("str:" + str);
 
     }
 }

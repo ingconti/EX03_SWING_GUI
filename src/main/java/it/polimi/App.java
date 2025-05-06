@@ -35,7 +35,7 @@ public class App
 
                 LocalDateTime now = LocalDateTime.now();
                 String s = now.toString();
-                System.out.println(s);
+                //System.out.println(s);
                 //smallModel.timeStr =  s;
                 smallModel.setTimeStr(s);
             }
