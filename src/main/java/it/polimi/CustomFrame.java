@@ -64,8 +64,8 @@ public class CustomFrame extends JFrame {
             //int w = img.getWidth();
             //int h = img.getHeight();
 
-            int w = 100;
-            int h = 100;
+            int w = 200;
+            int h = 200;
             x+=w;
             g.drawImage(img, x,30, w,h, null);
         }

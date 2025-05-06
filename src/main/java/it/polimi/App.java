@@ -16,7 +16,7 @@ public class App
     private static void createAndShowGUI() {
         CustomFrame f = new CustomFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(450,450);
+        f.setSize(650,650);
         f.setVisible(true);
     }
 
