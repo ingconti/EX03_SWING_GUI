@@ -4,10 +4,12 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class CustomFrame extends JFrame {
+public class CustomFrame extends JFrame implements PropertyChangeListener {
 
     public void paint(Graphics g) {
         g.drawString("Hello", 200, 50);
@@ -72,4 +74,9 @@ public class CustomFrame extends JFrame {
         }
     }
 
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        System.out.println("evt  " + evt);
+
+    }
 }
