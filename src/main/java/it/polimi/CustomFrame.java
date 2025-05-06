@@ -54,7 +54,7 @@ public class CustomFrame extends JFrame {
 
             BufferedImage img= null;
             InputStream is = cl.getResourceAsStream(item);
-            System.out.println(is);
+            //System.out.println(is);
             try {
                 img = ImageIO.read(is);
             } catch (IOException e) {
