@@ -1,12 +1,15 @@
 package it.polimi;
 
 import javax.swing.*;
+import java.time.LocalDateTime;
 import java.util.TimerTask;
 import java.util.Timer;
 
 
 public class App 
 {
+    static SmallModel smallModel = new SmallModel();
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -27,7 +30,13 @@ public class App
         Timer timer = new Timer("mock");
         TimerTask task = new TimerTask() {
             public void run() {
-                System.out.println("HELLO");
+                //System.out.println("HELLO");
+
+                LocalDateTime now = LocalDateTime.now();
+                String s = now.toString();
+                System.out.println(s);
+                smallModel.timeStr =  s;
+
             }
         };
 
