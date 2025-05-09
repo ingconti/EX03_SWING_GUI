@@ -15,5 +15,12 @@ public class CustomFrame extends JFrame {
         int y = 100;
         int rectwidth = 50;
         int rectheight = 100;
+
+        Color c = Color.red;
+        g.setColor(c);
+        x=100;
+        g.drawRect(x, y, rectwidth, rectheight);
+
+
     }
 }
