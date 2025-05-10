@@ -11,18 +11,20 @@ public class CustomFrame extends JFrame {
 
     public void paint(Graphics g) {
         g.drawString("Hello", 200, 50);
-        int x = 200;
+        int x = 100;
         int y = 100;
         int rectwidth = 50;
         int rectheight = 100;
 
         Color c = Color.red;
         g.setColor(c);
-        x=100;
+
         g.drawRect(x, y, rectwidth, rectheight);
-        myDrawImage(g);
+        // swing_03 myDrawImage(g);
+        drawCards(g);
     }
 
+    /*
     private void myDrawImage(Graphics g){
 
         ClassLoader cl = this.getClass().getClassLoader();
@@ -39,6 +41,39 @@ public class CustomFrame extends JFrame {
 
         g.drawImage(img, 10,30, 200,200, null);
 
+    }*/
+
+
+    private void drawCards(Graphics g) {
+        ClassLoader cl = this.getClass().getClassLoader();
+
+        String[] cardNames = new String[]{
+                "GT-cards_I_IT_012.jpg", "GT-cards_I_IT_013.jpg"
+        };
+
+        int x = 10;
+        int y = 30;
+        for (String item : cardNames) {
+
+            BufferedImage img= null;
+            InputStream is = cl.getResourceAsStream(item);
+            //System.out.println(is);
+            try {
+                img = ImageIO.read(is);
+            } catch (IOException e) {
+                //not for now..
+            }
+
+            int w = img.getWidth();
+            int h = img.getHeight();
+
+            //int w = 100;
+            //int h = 100;
+            g.drawImage(img, x,30, w,h, null);
+            x+=w;
+
+        }
     }
+
 
 }
