@@ -20,7 +20,23 @@ public class CustomFrame extends JFrame {
         g.setColor(c);
         x=100;
         g.drawRect(x, y, rectwidth, rectheight);
+        myDrawImage(g);
+    }
 
+    private void myDrawImage(Graphics g){
+
+        ClassLoader cl = this.getClass().getClassLoader();
+        InputStream url = cl.getResourceAsStream("cardboard-1.jpg");
+        BufferedImage img= null;
+        try {
+            img = ImageIO.read(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        g.drawImage(img, 10,30, 200,200, null);
 
     }
+
 }
