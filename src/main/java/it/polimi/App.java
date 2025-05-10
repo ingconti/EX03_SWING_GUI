@@ -41,7 +41,7 @@ public class App
             public void run() {
                 if (sceneList.size()>0) {
                     String s = sceneList.getFirst();
-                    sceneList.remove(0);
+                    sceneList.removeFirst();
                     System.out.println(s);
                     smallModel.setTimeStr(s);
                 }
