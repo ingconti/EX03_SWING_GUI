@@ -1,7 +1,6 @@
 package it.polimi;
 
 import javax.swing.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.TimerTask;
 import java.util.Timer;
