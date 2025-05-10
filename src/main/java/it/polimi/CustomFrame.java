@@ -26,7 +26,9 @@ public class CustomFrame extends JFrame {
     private void myDrawImage(Graphics g){
 
         ClassLoader cl = this.getClass().getClassLoader();
-        InputStream url = cl.getResourceAsStream("cardboard-1.jpg");
+        //InputStream url = cl.getResourceAsStream("cardboard-1.jpg");
+        InputStream url = cl.getResourceAsStream("example.png");
+
         BufferedImage img= null;
         try {
             img = ImageIO.read(url);
