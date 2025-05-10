@@ -32,14 +32,14 @@ public class App
     private static void mockNetworkMessages(){
 
         ArrayList<DrawableCard> cardList1 = new ArrayList<>();
-        cardList1.add(new DrawableCard(1, 100, 100));
+        cardList1.add(new DrawableCard(12, 100, 100));
 
         RenderingMessage renderingMessage1 =
                 new RenderingMessage(cardList1, null);
 
         ArrayList<DrawableCard> cardList2 = new ArrayList<>();
-        cardList2.add(new DrawableCard(1, 200, 100));
-        cardList2.add(new DrawableCard(2, 300, 200));
+        cardList2.add(new DrawableCard(13, 200, 100));
+        cardList2.add(new DrawableCard(14, 300, 200));
 
         RenderingMessage renderingMessage2 =
                 new RenderingMessage(cardList2, null);
