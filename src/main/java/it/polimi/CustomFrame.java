@@ -14,6 +14,11 @@ public class CustomFrame extends JFrame implements PropertyChangeListener {
     String msg = "Hello";
 
     public void paint(Graphics g) {
+
+        g.setColor(Color.white);
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
+        g.setColor(Color.black);
+
         g.drawString(msg, 20, 50);
         int x = 100;
         int y = 100;
