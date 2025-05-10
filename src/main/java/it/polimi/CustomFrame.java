@@ -10,7 +10,8 @@ import java.io.InputStream;
 public class CustomFrame extends JFrame {
 
     public void paint(Graphics g) {
-        g.drawString("Hello", 200, 50);
+        String msg = "Hello";
+        g.drawString(msg, 20, 50);
         int x = 100;
         int y = 100;
         int rectwidth = 50;
@@ -20,8 +21,8 @@ public class CustomFrame extends JFrame {
         g.setColor(c);
 
         g.drawRect(x, y, rectwidth, rectheight);
-        // swing_03 myDrawImage(g);
-        drawCards(g);
+        // swing_03: myDrawImage(g);
+       drawCards(g);
     }
 
     /*
@@ -69,7 +70,7 @@ public class CustomFrame extends JFrame {
 
             //int w = 100;
             //int h = 100;
-            g.drawImage(img, x,30, w,h, null);
+            g.drawImage(img, x,y, w,h, null);
             x+=w;
 
         }
