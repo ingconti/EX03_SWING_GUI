@@ -20,6 +20,8 @@ public class App
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(850,650);
         f.setVisible(true);
+        mockNetworkMessages();
+
     }
 
     private static void mockNetworkMessages(){

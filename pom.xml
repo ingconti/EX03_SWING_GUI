@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>it.polimi</groupId>
-  <artifactId>EX03_GUI</artifactId>
+  <artifactId>EX03_GUI_SWING</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>EX03_GUI</name>
+  <name>EX03_GUI_SWING</name>
   <url>http://maven.apache.org</url>
 
   <properties>

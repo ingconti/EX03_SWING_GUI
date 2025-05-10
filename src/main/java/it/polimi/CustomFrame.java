@@ -52,7 +52,7 @@ public class CustomFrame extends JFrame {
         };
 
         int x = 10;
-        int y = 30;
+        int y = 100;
         for (String item : cardNames) {
 
             BufferedImage img= null;
