@@ -85,7 +85,8 @@ public class CustomFrame extends JFrame implements PropertyChangeListener {
         //System.out.println("evt  " + evt);
         String s = (String) evt.getNewValue();
         this.msg = s;
-        System.out.println("str:" + s);
+        //System.out.println("str:" + s);
+        this.repaint();
 
     }
 
