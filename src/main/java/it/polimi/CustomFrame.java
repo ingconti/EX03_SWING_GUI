@@ -14,26 +14,35 @@ public class CustomFrame extends JFrame implements PropertyChangeListener {
     String msg = "Hello";
 
     public void paint(Graphics g) {
-
         g.setColor(Color.white);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         g.setColor(Color.black);
 
-        g.drawString(msg, 20, 50);
-        int x = 100;
+        g.drawString(msg, 200, 50);
+        int x = 200;
         int y = 100;
         int rectwidth = 50;
         int rectheight = 100;
 
-        Color c = Color.red;
-        g.setColor(c);
+        switch (msg){
+            case "splash":
+                Color c = Color.red;
+                g.setColor(c);
+                x=100;
+                g.drawRect(x, y, rectwidth, rectheight);
+                break;
 
-        g.drawRect(x, y, rectwidth, rectheight);
-        // swing_03: myDrawImage(g);
-       drawCards(g);
+            case "myDrawImage":
+                myDrawImage(g);
+                break;
+
+            case "drawCards":
+                drawCards(g);
+                break;
+        }
+
     }
 
-    /*
     private void myDrawImage(Graphics g){
 
         ClassLoader cl = this.getClass().getClassLoader();
@@ -49,8 +58,7 @@ public class CustomFrame extends JFrame implements PropertyChangeListener {
         }
 
         g.drawImage(img, 10,30, 200,200, null);
-
-    }*/
+    }
 
 
     private void drawCards(Graphics g) {

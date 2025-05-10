@@ -51,7 +51,7 @@ public class App
 
 
         long delay = 0;
-        long period = 1000L;
+        long period = 2000L;
         timer.schedule(task, delay, period);
     }
 
