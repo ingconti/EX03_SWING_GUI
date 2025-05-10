@@ -18,30 +18,15 @@ public class CustomFrame extends JFrame implements PropertyChangeListener {
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         g.setColor(Color.black);
 
-        g.drawString(msg, 200, 50);
-        int x = 200;
-        int y = 100;
-        int rectwidth = 50;
-        int rectheight = 100;
+        for (DrawableCard dc: renderingMessage.drawableCards){
 
-        switch (msg){
-            case "splash":
-                Color c = Color.red;
-                g.setColor(c);
-                x=100;
-                g.drawRect(x, y, rectwidth, rectheight);
-                break;
-
-            case "myDrawImage":
-                myDrawImage(g);
-                break;
-
-            case "drawCards":
-                drawCards(g);
-                break;
+            Image img = imgFrom(dc.cardId);
+            if (img != null){
+                g.drawImage(img, dc.x,dc.y, 200,200, null);
+            }
         }
-
     }
+
 
     private void myDrawImage(Graphics g){
 
@@ -93,14 +78,31 @@ public class CustomFrame extends JFrame implements PropertyChangeListener {
     }
 
 
+    RenderingMessage renderingMessage;
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        //System.out.println("evt  " + evt);
-        String s = (String) evt.getNewValue();
-        this.msg = s;
-        //System.out.println("str:" + s);
+        //String s = (String) evt.getNewValue();
+        //msg = s;
+        renderingMessage = (RenderingMessage)evt.getNewValue();
+        msg = renderingMessage.toString();
         this.repaint();
+    }
 
+
+    private BufferedImage imgFrom(int id){
+
+        // ... stesso codice x leggere da disco.
+        ClassLoader cl = this.getClass().getClassLoader();
+        BufferedImage img= null;
+        String item = "GT-cards_I_IT_0" + id + ".jpg";
+        InputStream is = cl.getResourceAsStream(item);
+        try {
+            img = ImageIO.read(is);
+        } catch (IOException e) {
+            //not for now..
+        }
+
+        return  img;
     }
 
 
