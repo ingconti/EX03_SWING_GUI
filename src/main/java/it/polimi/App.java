@@ -26,6 +26,7 @@ public class App
         f.setVisible(true);
         mockNetworkMessages();
 
+        smallModel.setListener(f);
     }
 
     private static void mockNetworkMessages(){
@@ -34,7 +35,7 @@ public class App
             public void run() {
                 LocalDateTime now = LocalDateTime.now();
                 String s = now.toString();
-                System.out.println(s);
+                // no more... System.out.println(s);
                 smallModel.setTimeStr(s);
             }
 
