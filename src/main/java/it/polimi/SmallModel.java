@@ -7,12 +7,9 @@ import java.beans.PropertyChangeListener;
 public class SmallModel {
 
     private String timeStr = "??";
-
     public String getTimeStr() {
         return timeStr;
     }
-
-
     public void setTimeStr(String timeStr) {
 
         PropertyChangeEvent evt = new PropertyChangeEvent(
@@ -25,6 +22,24 @@ public class SmallModel {
         this.listener.propertyChange(evt);
     }
 
+    private RenderingMessage renderingMessage;
+
+    public RenderingMessage getRenderingMessage() {
+        return renderingMessage;
+    }
+
+
+    public void setRenderingMessage(RenderingMessage renderingMessage) {
+
+        PropertyChangeEvent evt = new PropertyChangeEvent(
+                this,
+                "MODEL_CHANGED",
+                this.renderingMessage,
+                renderingMessage);
+
+        this.listener.propertyChange(evt);
+        this.renderingMessage = renderingMessage;
+    }
 
     PropertyChangeListener listener;
     public void setListener(PropertyChangeListener listener) {
