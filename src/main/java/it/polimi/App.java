@@ -7,6 +7,9 @@ import java.util.Timer;
 
 public class App 
 {
+
+     static SmallModel smallModel = new SmallModel();
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
