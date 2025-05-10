@@ -2,6 +2,7 @@ package it.polimi;
 
 import javax.swing.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.TimerTask;
 import java.util.Timer;
 
@@ -30,16 +31,24 @@ public class App
     }
 
     private static void mockNetworkMessages(){
+
+        ArrayList<String> sceneList = new ArrayList<String>();
+        sceneList.add("splash");
+        sceneList.add("myDrawImage");
+        sceneList.add("drawCards");
+
         Timer timer = new Timer("mock");
         TimerTask task = new TimerTask() {
             public void run() {
-                LocalDateTime now = LocalDateTime.now();
-                String s = now.toString();
-                // no more... System.out.println(s);
-                smallModel.setTimeStr(s);
+                if (sceneList.size()>0) {
+                    String s = sceneList.getFirst();
+                    sceneList.remove(0);
+                    System.out.println(s);
+                    smallModel.setTimeStr(s);
+                }
             }
-
         };
+
 
         long delay = 0;
         long period = 1000L;
