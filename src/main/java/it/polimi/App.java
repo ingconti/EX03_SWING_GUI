@@ -1,9 +1,6 @@
 package it.polimi;
 
 import javax.swing.*;
-import java.util.TimerTask;
-import java.util.Timer;
-
 
 public class App 
 {
@@ -22,17 +19,5 @@ public class App
         f.setVisible(true);
     }
 
-    private static void mockNetworkMessages(){
-        Timer timer = new Timer("mock");
-        TimerTask task = new TimerTask() {
-            public void run() {
-                System.out.println("HELLO");
-            }
-        };
-
-        long delay = 0;
-        long period = 1000L;
-        timer.schedule(task, delay, period);
-    }
 
 }
