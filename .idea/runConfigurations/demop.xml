@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="demop" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="it.polimi.App" />
+    <module name="EX03_GUI_SWING" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
